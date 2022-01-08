@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply dark:bg-nord0 dark:text-nord6 bg-nord6 text-nord0;
+  }
+}

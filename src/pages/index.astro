@@ -1,0 +1,13 @@
+---
+import BaseLayout from 'layout:BaseLayout';
+
+import NumberDrawer from '@components/NumberDrawer.svelte';
+import NumberTable from '@components/NumberTable.svelte';
+---
+
+<BaseLayout>
+  <div class="flex flex-row">
+    <NumberTable client:visible />
+    <NumberDrawer client:visible />
+  </div>
+</BaseLayout>
