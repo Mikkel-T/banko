@@ -8,13 +8,18 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "lint": "eslint .",
     "format": "prettier . -w"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
     "astro": "^1.6.11",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
+    "eslint": "^8.28.0",
+    "eslint-plugin-svelte3": "^4.0.0",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "prettier-plugin-astro": "^0.7.0",
@@ -25,7 +30,6 @@
   "dependencies": {
     "@astrojs/svelte": "^1.0.2",
     "@astrojs/tailwind": "^2.1.3",
-    "lodash-es": "^4.17.21",
     "nanostores": "^0.7.1",
     "svelte": "^3.46.4",
     "svelte-icons": "^2.1.0",

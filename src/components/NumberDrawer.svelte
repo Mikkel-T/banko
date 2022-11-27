@@ -1,15 +1,14 @@
 <script>
-  import { random, pull, range } from "lodash-es";
   import { drawn, add, reset as resetDrawn } from "@store/drawn";
   import MdRefresh from "svelte-icons/md/MdRefresh.svelte";
 
-  let nums = range(1, 91);
+  let nums = [...Array(90).keys()].map(k => k + 1);
 
   function draw() {
     if (nums.length > 0) {
-      let num = random(1, nums.length) - 1;
+      let num = Math.floor(Math.random() * nums.length);
       add(nums[num]);
-      pull(nums, nums[num]);
+      nums = nums.filter(i => i !== nums[num]);
     }
   }
 
@@ -18,7 +17,7 @@
   }
 
   function reset() {
-    nums = range(1, 91);
+    nums = [...Array(90).keys()].map(k => k + 1);
     resetDrawn();
   }
 </script>

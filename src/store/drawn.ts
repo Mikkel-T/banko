@@ -1,8 +1,8 @@
 import { atom } from "nanostores";
 
-export const drawn = atom<Number[]>([]);
+export const drawn = atom<number[]>([]);
 
-export function add(num: Number) {
+export function add(num: number) {
   drawn.set([num, ...drawn.get()]);
 }
 
