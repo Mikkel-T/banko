@@ -33,7 +33,7 @@ module.exports = {
       "warn",
       {
         selector: "variableLike",
-        format: ["camelCase", "PascalCase"],
+        format: ["camelCase"],
         leadingUnderscore: "allow",
       },
       { selector: "typeLike", format: ["PascalCase"] },

@@ -7,3 +7,9 @@
     @apply bg-dracula-light text-dracula-darker dark:bg-dracula-darker dark:text-dracula-light print:bg-white;
   }
 }
+
+@layer utilities {
+  .link {
+    @apply text-dracula-light-700 hover:underline dark:text-dracula-blue-400;
+  }
+}

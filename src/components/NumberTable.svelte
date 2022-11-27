@@ -6,9 +6,9 @@
   class="h-screen w-1/2 select-none border border-dracula-darker p-0 text-center dark:border-dracula-light"
 >
   <tbody>
-    {#each [...Array(9).keys()].map(k => (k+1)*10) as row}
+    {#each [...Array(9).keys()].map((i) => (i + 1) * 10) as row}
       <tr>
-        {#each  [...Array(10).keys()].map(k => 9-k) as sub}
+        {#each [...Array(10).keys()].map((i) => 9 - i) as sub}
           <td
             class:bg-red-500={$drawn.includes(row - sub)}
             class="border border-dracula-darker text-center text-3xl font-bold dark:border-dracula-light"

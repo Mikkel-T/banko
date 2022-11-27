@@ -2,13 +2,13 @@
   import { drawn, add, reset as resetDrawn } from "@store/drawn";
   import MdRefresh from "svelte-icons/md/MdRefresh.svelte";
 
-  let nums = [...Array(90).keys()].map(k => k + 1);
+  let nums = [...Array(90).keys()].map((i) => i + 1);
 
   function draw() {
     if (nums.length > 0) {
       let num = Math.floor(Math.random() * nums.length);
       add(nums[num]);
-      nums = nums.filter(i => i !== nums[num]);
+      nums = nums.filter((i) => i !== nums[num]);
     }
   }
 
@@ -17,7 +17,7 @@
   }
 
   function reset() {
-    nums = [...Array(90).keys()].map(k => k + 1);
+    nums = [...Array(90).keys()].map((i) => i + 1);
     resetDrawn();
   }
 </script>
@@ -41,5 +41,18 @@
       <MdRefresh />
     </span>
     Reset
+  </div>
+
+  <div class="mt-2 mb-5 text-center">
+    <a
+      href="https://github.com/Mikkel-T/banko"
+      class="link"
+      target="_blank"
+      rel="noreferrer">Open Source</a
+    >
+    projekt lavet af
+    <a class="link" href="https://mikkel-t.com" target="_blank" rel="noreferrer"
+      >Mikkel Tønder
+    </a>
   </div>
 </div>
