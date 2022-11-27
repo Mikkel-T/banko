@@ -1,21 +1,20 @@
 <script>
-  import { random, pull, range } from 'lodash-es';
-  import { drawn, add, reset as resetDrawn } from '@store/drawn';
-  import ThemeToggle from '@components/ThemeToggle.svelte';
-  import MdRefresh from 'svelte-icons/md/MdRefresh.svelte';
+  import { random, pull, range } from "lodash-es";
+  import { drawn, add, reset as resetDrawn } from "@store/drawn";
+  import MdRefresh from "svelte-icons/md/MdRefresh.svelte";
 
   let nums = range(1, 91);
 
   function draw() {
     if (nums.length > 0) {
-      let num = random(1, nums.length);
-      add(nums[num - 1]);
-      pull(nums, nums[num - 1]);
+      let num = random(1, nums.length) - 1;
+      add(nums[num]);
+      pull(nums, nums[num]);
     }
   }
 
   function handleKeydown(event) {
-    if (event.code === 'Space') draw();
+    if (event.code === "Space") draw();
   }
 
   function reset() {
@@ -25,22 +24,21 @@
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
-<ThemeToggle />
-<div class="flex justify-center items-center flex-col w-1/2 gap-2">
+<div class="flex w-1/2 flex-col items-center justify-center gap-2">
   <div class="text-9xl">{$drawn[0] || 0}</div>
   <div class="text-5xl">{$drawn[1] || 0}</div>
   <div class="text-4xl">{$drawn[2] || 0}</div>
   <div
-    class="bg-nord9 p-10 rounded-md cursor-pointer select-none active:bg-nord10 text-nord6"
+    class="cursor-pointer select-none rounded-md bg-nord9 p-10 text-nord6 active:bg-nord10"
     on:click={draw}
   >
     Træk et tal
   </div>
   <div
-    class="bg-nord11 p-2 rounded-md justify-center flex items-center cursor-pointer text-nord6"
+    class="flex cursor-pointer items-center justify-center rounded-md bg-nord11 p-2 text-nord6"
     on:click={reset}
   >
-    <span class="h-5 w-5 inline-flex mr-2">
+    <span class="mr-2 inline-flex h-5 w-5">
       <MdRefresh />
     </span>
     Reset

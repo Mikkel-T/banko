@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply dark:bg-nord0 dark:text-nord6 bg-nord6 text-nord0;
+    @apply bg-nord6 text-nord0 dark:bg-nord0 dark:text-nord6 print:bg-white;
   }
 }

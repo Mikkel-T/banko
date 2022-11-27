@@ -1,7 +1,18 @@
-export default {
-  buildOptions: {
-    // site: 'http://example.com',           // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
-    sitemap: true, // Generate sitemap (set to "false" to disable)
-  },
-  renderers: ['@astrojs/renderer-solid', '@astrojs/renderer-svelte'],
-};
+import solid from "@astrojs/solid-js";
+import svelte from "@astrojs/svelte";
+import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
+
+// https://astro.build/config
+export default defineConfig({
+  site: "https://banko.mikkel-t.com",
+  integrations: [
+    svelte(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    solid(),
+  ],
+});
