@@ -1,3 +1,4 @@
+import { get_seed } from "@utils";
 import { prng_alea } from "esm-seedrandom";
 
 type PlateRows<T> = [
@@ -28,7 +29,7 @@ export class Plate {
    */
   constructor(seed?: number) {
     if (!seed) {
-      this.seed = Math.floor(Math.random() * 1000) + 1;
+      this.seed = get_seed();
     } else {
       this.seed = seed;
     }

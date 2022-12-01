@@ -27,7 +27,7 @@
       <div>{count}</div>
       <button
         on:click={() => {
-          if (count < 5) {
+          if (count < 6) {
             count += 1;
           }
         }}
