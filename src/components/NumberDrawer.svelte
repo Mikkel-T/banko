@@ -1,6 +1,7 @@
-<script>
-  import { drawn, add, reset as resetDrawn } from "@store/drawn";
+<script lang="ts">
   import MdRefresh from "svelte-icons/md/MdRefresh.svelte";
+
+  import { add, drawn, reset as resetDrawn } from "@store/drawn";
 
   let nums = [...Array(90).keys()].map((i) => i + 1);
 
@@ -12,7 +13,7 @@
     }
   }
 
-  function handleKeydown(event) {
+  function handle_keydown(event) {
     if (event.code === "Space") draw();
   }
 
@@ -22,18 +23,18 @@
   }
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window on:keydown={handle_keydown} />
 <div class="flex w-1/2 flex-col items-center justify-center gap-2">
   <div class="text-9xl">{$drawn[0] || 0}</div>
   <div class="text-5xl">{$drawn[1] || 0}</div>
   <div class="text-4xl">{$drawn[2] || 0}</div>
-  <div
+  <button
     class="cursor-pointer select-none rounded-md bg-dracula-blue-500 p-10 text-dracula-light active:bg-dracula-blue-600"
     on:click={draw}
   >
     Træk et tal
-  </div>
-  <div
+  </button>
+  <button
     class="flex cursor-pointer items-center justify-center rounded-md bg-dracula-red p-2 text-dracula-light"
     on:click={reset}
   >
@@ -41,7 +42,7 @@
       <MdRefresh />
     </span>
     Reset
-  </div>
+  </button>
 
   <div class="mt-2 mb-5 text-center">
     <a

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { drawn } from "@store/drawn";
 </script>
 

@@ -1,23 +1,24 @@
-<script>
+<script lang="ts">
+  import { onMount } from "svelte";
   import FaMoon from "svelte-icons/fa/FaMoon.svelte";
   import FaSun from "svelte-icons/fa/FaSun.svelte";
-  import { onMount } from "svelte";
 
   let theme = "";
   onMount(() => {
-    const isDarkTheme = document.documentElement.classList.contains("dark");
-    theme = isDarkTheme ? "dark" : "light";
+    theme = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
   });
 
-  function changeTheme() {
+  function chnage_theme() {
     theme = theme === "dark" ? "light" : "dark";
     localStorage.setItem("theme", theme);
     document.documentElement.classList.toggle("dark");
   }
 </script>
 
-<div
-  on:click={changeTheme}
+<button
+  on:click={chnage_theme}
   class="group absolute right-0 m-2 ml-2 inline-flex h-6 w-12 items-center rounded-full bg-dracula-blue-500 transition-opacity duration-300 ease-in"
   class:opacity-0={!theme}
   class:cursor-pointer={theme}
@@ -35,4 +36,4 @@
   >
     <FaMoon />
   </span>
-</div>
+</button>
