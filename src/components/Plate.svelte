@@ -67,7 +67,7 @@
         </tr>
       {/each}
     </table>
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-row items-end justify-between">
       <div>
         Plade:
         {#if editing}
@@ -88,8 +88,10 @@
           </button>
           <button
             class="mt-1 h-6 w-6 rounded-md bg-dracula-orange p-1"
-            on:click={() => (plate = new Plate(get_seed()))}
-            ><MdRefresh /></button
+            on:click={() => {
+              plate = new Plate(get_seed());
+              seed = plate.seed;
+            }}><MdRefresh /></button
           >
         {/if}
       </div>
