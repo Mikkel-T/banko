@@ -45,13 +45,11 @@
             >
               {#if num.has_number}
                 <button
-                  class="flex h-full w-full items-center justify-center rounded-full bg-opacity-80 outline-none"
+                  class="flex h-full w-full items-center justify-center rounded-full border-dracula-orange bg-opacity-80 outline-none hover:border-4"
                   class:bg-dracula-red={num.picked &&
                     !plate.check_rows().includes(rowIdx)}
                   class:bg-dracula-green-900={num.has_number &&
                     plate.check_rows().includes(rowIdx)}
-                  class:hover:bg-dracula-orange-400={num.has_number &&
-                    !num.picked}
                   on:click={() => {
                     if (num.has_number) {
                       plate.pick_num(num.number);
