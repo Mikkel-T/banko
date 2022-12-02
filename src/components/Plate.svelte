@@ -43,25 +43,25 @@
             <td
               class="h-16 w-16 border border-dracula-darker p-0 text-center font-bold dark:border-dracula-light"
             >
-              <button
-                class="flex h-full w-full items-center justify-center rounded-full bg-opacity-80"
-                class:bg-dracula-red={num.picked &&
-                  !plate.check_rows().includes(rowIdx)}
-                class:bg-dracula-green-900={num.has_number &&
-                  plate.check_rows().includes(rowIdx)}
-                class:hover:bg-dracula-orange-400={num.has_number &&
-                  !num.picked}
-                on:click={() => {
-                  if (num.has_number) {
-                    plate.pick_num(num.number);
-                    plate = plate;
-                  }
-                }}
-              >
-                {#if num.has_number}
+              {#if num.has_number}
+                <button
+                  class="flex h-full w-full items-center justify-center rounded-full bg-opacity-80 outline-none"
+                  class:bg-dracula-red={num.picked &&
+                    !plate.check_rows().includes(rowIdx)}
+                  class:bg-dracula-green-900={num.has_number &&
+                    plate.check_rows().includes(rowIdx)}
+                  class:hover:bg-dracula-orange-400={num.has_number &&
+                    !num.picked}
+                  on:click={() => {
+                    if (num.has_number) {
+                      plate.pick_num(num.number);
+                      plate = plate;
+                    }
+                  }}
+                >
                   {num.number}
-                {/if}
-              </button>
+                </button>
+              {/if}
             </td>
           {/each}
         </tr>
