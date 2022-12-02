@@ -2,6 +2,7 @@
   import FaPlus from "svelte-icons/fa/FaPlus.svelte";
   import FaMinus from "svelte-icons/fa/FaMinus.svelte";
   import MdRefresh from "svelte-icons/md/MdRefresh.svelte";
+  import Footer from "@components/Footer.svelte";
 
   import Plate from "./Plate.svelte";
 
@@ -54,4 +55,6 @@
       </div>
     {/each}
   </div>
+
+  <Footer />
 </div>

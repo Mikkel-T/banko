@@ -1,0 +1,12 @@
+<div class="mt-2 mb-5 text-center">
+  <a
+    href="https://github.com/Mikkel-T/banko"
+    class="link"
+    target="_blank"
+    rel="noreferrer">Open Source</a
+  >
+  projekt lavet af
+  <a class="link" href="https://mikkel-t.com" target="_blank" rel="noreferrer"
+    >Mikkel Tønder
+  </a>
+</div>

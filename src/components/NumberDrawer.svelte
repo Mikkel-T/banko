@@ -1,6 +1,8 @@
 <script lang="ts">
   import MdRefresh from "svelte-icons/md/MdRefresh.svelte";
 
+  import Footer from "@components/Footer.svelte";
+
   import { add, drawn, reset as resetDrawn } from "@store/drawn";
 
   let nums = [...Array(90).keys()].map((i) => i + 1);
@@ -44,16 +46,5 @@
     Reset
   </button>
 
-  <div class="mt-2 mb-5 text-center">
-    <a
-      href="https://github.com/Mikkel-T/banko"
-      class="link"
-      target="_blank"
-      rel="noreferrer">Open Source</a
-    >
-    projekt lavet af
-    <a class="link" href="https://mikkel-t.com" target="_blank" rel="noreferrer"
-      >Mikkel Tønder
-    </a>
-  </div>
+  <Footer />
 </div>
