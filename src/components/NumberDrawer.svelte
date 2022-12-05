@@ -46,5 +46,7 @@
     Reset
   </button>
 
+  <a href="/play" class="link my-2 text-center" rel="noreferrer">Bankoplade</a>
+
   <Footer />
 </div>
