@@ -22,6 +22,9 @@ export class Plate {
     picked?: boolean;
   }>;
 
+  /**
+   * The seed used for the random number generator
+   */
   seed: number;
 
   /**
@@ -61,8 +64,6 @@ export class Plate {
       Array.from({ length: 11 }, (_, i) => i + 80),
     ];
 
-    // Array.from({length: 4}, (_, i) => i + 1
-
     // Start by populating the numbers array with one number from each range
     ranges.forEach((range) => {
       numbers.push(range[Math.floor(rng() * range.length)]);
@@ -79,6 +80,7 @@ export class Plate {
       }
     }
 
+    // Sort the numbers array from smallest to largest
     numbers.sort((a, b) => a - b);
 
     const lengths: [
@@ -163,6 +165,9 @@ export class Plate {
     return rows;
   }
 
+  /**
+   * Convert the rows to a clean new state
+   */
   rows_to_state(): Plate["state"] {
     const rows: Plate["state"] = new_plate({ has_number: false });
 
@@ -177,10 +182,16 @@ export class Plate {
     return rows;
   }
 
+  /**
+   * Set the state to a new blank state
+   */
   reset() {
     this.state = this.rows_to_state();
   }
 
+  /**
+   * If a number is present on the plate, set its "picked" value to the opposite
+   */
   pick_num(num: number) {
     for (let i = 0; i < this.state.length; i++) {
       const index = this.state[i].findIndex((i) => i.number === num);
@@ -191,18 +202,27 @@ export class Plate {
     }
   }
 
+  /**
+   * Calls pick_num for all numbers in an array
+   */
   pick_nums(nums: number[]) {
     for (const num of nums) {
       this.pick_num(num);
     }
   }
 
+  /**
+   * Sets the "picked" value of the selected number (By row and col) to the opposite
+   */
   pick_index(row: number, col: number) {
     if (this.state[row][col].has_number) {
       this.state[row][col].picked = !this.state[row][col].picked;
     }
   }
 
+  /**
+   * Check if any rows are full
+   */
   check_rows(): number[] {
     const res: number[] = [];
 
