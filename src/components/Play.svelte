@@ -21,7 +21,7 @@
             count -= 1;
           }
         }}
-        class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-dracula-pink p-2 hover:bg-dracula-pink-400"
+        class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-dracula-pink p-2 hover:bg-dracula-pink-400 active:bg-dracula-pink-500"
       >
         <FaMinus />
       </button>
@@ -32,13 +32,13 @@
             count += 1;
           }
         }}
-        class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-dracula-pink p-2 hover:bg-dracula-pink-400"
+        class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-dracula-pink p-2 hover:bg-dracula-pink-400 active:bg-dracula-pink-500"
       >
         <FaPlus />
       </button>
     </div>
     <button
-      class="flex cursor-pointer items-center justify-center rounded-md bg-dracula-red p-2 text-dracula-light hover:bg-dracula-red-500"
+      class="flex cursor-pointer items-center justify-center rounded-md bg-dracula-red p-2 text-dracula-light hover:bg-dracula-red-500 active:bg-dracula-red-600"
       on:click={() => emitter.emit("reset")}
     >
       <span class="mr-2 inline-flex h-5 w-5">

@@ -32,7 +32,7 @@
     Træk et tal
   </button>
   <button
-    class="flex cursor-pointer items-center justify-center rounded-md bg-dracula-red p-2 text-dracula-light hover:bg-dracula-red-500"
+    class="flex cursor-pointer items-center justify-center rounded-md bg-dracula-red p-2 text-dracula-light hover:bg-dracula-red-500 active:bg-dracula-red-600"
     on:click={reset}
   >
     <span class="mr-2 inline-flex h-5 w-5">
