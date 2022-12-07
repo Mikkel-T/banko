@@ -71,7 +71,7 @@
         {#if editing}
           <form class="inline-block" on:submit|preventDefault={edit_seed}>
             <input
-              class="w-14 border-0 border-b-2 border-b-dracula-darker bg-transparent focus:ring-0 dark:border-b-dracula-light"
+              class="w-14 border-0 border-b-2 border-b-dracula-darker bg-transparent outline-none focus:ring-0 dark:border-b-dracula-light"
               bind:value={seed}
               type="number"
             />
