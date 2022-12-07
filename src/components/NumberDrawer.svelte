@@ -15,17 +15,12 @@
     }
   }
 
-  function handle_keydown(event) {
-    if (event.code === "Space") draw();
-  }
-
   function reset() {
     nums = [...Array(90).keys()].map((i) => i + 1);
     resetDrawn();
   }
 </script>
 
-<svelte:window on:keydown={handle_keydown} />
 <div class="flex w-1/2 flex-col items-center justify-center gap-2">
   <div class="text-9xl">{$drawn[0] || 0}</div>
   <div class="text-5xl">{$drawn[1] || 0}</div>
