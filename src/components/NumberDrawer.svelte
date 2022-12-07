@@ -31,13 +31,13 @@
   <div class="text-5xl">{$drawn[1] || 0}</div>
   <div class="text-4xl">{$drawn[2] || 0}</div>
   <button
-    class="cursor-pointer select-none rounded-md bg-dracula-blue-500 p-10 text-dracula-light active:bg-dracula-blue-600"
+    class="cursor-pointer select-none rounded-md bg-dracula-blue-500 p-10 text-dracula-light hover:bg-dracula-blue-600 active:bg-dracula-blue-700"
     on:click={draw}
   >
     Træk et tal
   </button>
   <button
-    class="flex cursor-pointer items-center justify-center rounded-md bg-dracula-red p-2 text-dracula-light"
+    class="flex cursor-pointer items-center justify-center rounded-md bg-dracula-red p-2 text-dracula-light hover:bg-dracula-red-500"
     on:click={reset}
   >
     <span class="mr-2 inline-flex h-5 w-5">

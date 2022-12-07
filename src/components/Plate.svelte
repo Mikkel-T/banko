@@ -76,7 +76,7 @@
               type="number"
             />
             <button
-              class="mt-1 h-6 w-6 rounded-md bg-dracula-green-800 p-1"
+              class="mt-1 h-6 w-6 rounded-md bg-dracula-green-800 p-1 hover:bg-dracula-green-900"
               on:click={edit_seed}><MdCheck /></button
             >
           </form>
@@ -85,7 +85,7 @@
             {plate.seed}
           </button>
           <button
-            class="mt-1 h-6 w-6 rounded-md bg-dracula-orange p-1"
+            class="mt-1 h-6 w-6 rounded-md bg-dracula-orange p-1 hover:bg-dracula-orange-400"
             on:click={() => {
               plate = new Plate(get_seed());
               seed = plate.seed;
