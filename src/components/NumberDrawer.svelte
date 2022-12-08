@@ -5,6 +5,10 @@
 
   import { add, drawn, reset as resetDrawn } from "@store/drawn";
 
+  import MiniPlate from "./MiniPlate.svelte";
+
+  let seed;
+
   let nums = [...Array(90).keys()].map((i) => i + 1);
 
   function draw() {
@@ -40,6 +44,14 @@
     </span>
     Reset
   </button>
+
+  <input
+    type="text"
+    bind:value={seed}
+    class="rounded-md border border-dracula-darker p-1 outline-none dark:border-dracula-light"
+    placeholder="Tjek plade"
+  />
+  <MiniPlate {seed} />
 
   <a href="/play" class="link my-2 text-center" rel="noreferrer">Bankoplade</a>
 
