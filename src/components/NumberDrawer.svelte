@@ -3,26 +3,11 @@
 
   import Footer from "@components/Footer.svelte";
 
-  import { add, drawn, reset as resetDrawn } from "@store/drawn";
+  import { draw, drawn, reset } from "@store/drawn";
 
   import MiniPlate from "./MiniPlate.svelte";
 
   let seed;
-
-  let nums = [...Array(90).keys()].map((i) => i + 1);
-
-  function draw() {
-    if (nums.length > 0) {
-      let num = Math.floor(Math.random() * nums.length);
-      add(nums[num]);
-      nums = nums.filter((i) => i !== nums[num]);
-    }
-  }
-
-  function reset() {
-    nums = [...Array(90).keys()].map((i) => i + 1);
-    resetDrawn();
-  }
 </script>
 
 <div class="flex w-1/2 flex-col items-center justify-center gap-2">
