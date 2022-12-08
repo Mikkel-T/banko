@@ -28,9 +28,7 @@
       <div>{count}</div>
       <button
         on:click={() => {
-          if (count < 6) {
-            count += 1;
-          }
+          count += 1;
         }}
         class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-dracula-pink p-2 hover:bg-dracula-pink-400 active:bg-dracula-pink-500"
       >
