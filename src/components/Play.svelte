@@ -12,7 +12,7 @@
 </script>
 
 <div>
-  <div class="flex flex-col items-center justify-center gap-2">
+  <div class="flex flex-col items-center justify-center gap-2 print:hidden">
     <div class="text-2xl">Antal plader</div>
     <div class="flex flex-row items-center justify-center gap-2 text-3xl">
       <button

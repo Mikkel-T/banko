@@ -1,4 +1,4 @@
-<div class="mt-2 mb-5 text-center">
+<div class="mt-2 mb-5 text-center print:hidden">
   <a
     href="https://github.com/Mikkel-T/banko"
     class="link"

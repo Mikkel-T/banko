@@ -19,7 +19,7 @@
 
 <button
   on:click={chnage_theme}
-  class="group absolute right-0 m-2 ml-2 inline-flex h-6 w-12 items-center rounded-full bg-dracula-blue-500 transition-opacity duration-300 ease-in"
+  class="group absolute right-0 m-2 ml-2 inline-flex h-6 w-12 items-center rounded-full bg-dracula-blue-500 transition-opacity duration-300 ease-in print:hidden"
   class:opacity-0={!theme}
   class:cursor-pointer={theme}
 >
