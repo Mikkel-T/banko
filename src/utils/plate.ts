@@ -234,6 +234,23 @@ export class Plate {
 
     return res;
   }
+
+  /**
+   * Returns an array of the numbers on the plate
+   */
+  get_numbers(): number[] {
+    const nums: number[] = [];
+
+    this.rows.forEach((row) => {
+      row.forEach((n) => {
+        if (n) {
+          nums.push(n);
+        }
+      });
+    });
+
+    return nums.sort((a, b) => a - b);
+  }
 }
 
 /**

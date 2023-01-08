@@ -1,16 +1,15 @@
 <script lang="ts">
-  import MdRefresh from "svelte-icons/md/MdRefresh.svelte";
+  import IcRoundRefresh from "~icons/ic/round-refresh";
 
   import Footer from "@components/Footer.svelte";
+  import MiniPlate from "@components/MiniPlate.svelte";
 
   import { draw, drawn, reset } from "@store/drawn";
-
-  import MiniPlate from "./MiniPlate.svelte";
 
   let seed;
 </script>
 
-<div class="flex w-1/2 flex-col items-center justify-center gap-2">
+<div class="flex flex-col items-center justify-center gap-2 md:w-1/2">
   <div class="text-9xl">{$drawn[0] || 0}</div>
   <div class="text-5xl">{$drawn[1] || 0}</div>
   <div class="text-4xl">{$drawn[2] || 0}</div>
@@ -24,16 +23,14 @@
     class="flex cursor-pointer items-center justify-center rounded-md bg-dracula-red p-2 text-dracula-light hover:bg-dracula-red-500 active:bg-dracula-red-600"
     on:click={reset}
   >
-    <span class="mr-2 inline-flex h-5 w-5">
-      <MdRefresh />
-    </span>
+    <IcRoundRefresh class="mr-2 inline-flex h-5 w-5" />
     Reset
   </button>
 
   <input
     type="text"
     bind:value={seed}
-    class="rounded-md border border-dracula-darker p-1 outline-none dark:border-dracula-light"
+    class="rounded-md border border-dracula-darker bg-transparent p-1 outline-none dark:border-dracula-light dark:placeholder:text-dracula-light"
     placeholder="Tjek plade"
   />
   <MiniPlate {seed} />

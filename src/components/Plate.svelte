@@ -1,8 +1,8 @@
 <script lang="ts">
   import { get_seed } from "@utils";
   import { onMount } from "svelte";
-  import MdCheck from "svelte-icons/md/MdCheck.svelte";
-  import MdRefresh from "svelte-icons/md/MdRefresh.svelte";
+  import IcRoundCheck from "~icons/ic/round-check";
+  import IcRoundRefresh from "~icons/ic/round-refresh";
 
   import { Plate } from "@utils/plate";
 
@@ -76,8 +76,8 @@
               type="number"
             />
             <button
-              class="mt-1 h-6 w-6 rounded-md bg-dracula-green-700 p-1 hover:bg-dracula-green-800 active:bg-dracula-green-900"
-              on:click={edit_seed}><MdCheck /></button
+              class="mt-1 rounded-md bg-dracula-green-700 p-1 hover:bg-dracula-green-800 active:bg-dracula-green-900"
+              on:click={edit_seed}><IcRoundCheck class="h-4 w-4" /></button
             >
           </form>
         {:else}
@@ -85,11 +85,11 @@
             {plate.seed}
           </button>
           <button
-            class="mt-1 h-6 w-6 rounded-md bg-dracula-orange p-1 hover:bg-dracula-orange-400 active:bg-dracula-orange-500 print:hidden"
+            class="mt-1 rounded-md bg-dracula-orange p-1 hover:bg-dracula-orange-400 active:bg-dracula-orange-500 print:hidden"
             on:click={() => {
               plate = new Plate(get_seed());
               seed = plate.seed;
-            }}><MdRefresh /></button
+            }}><IcRoundRefresh class="h-4 w-4" /></button
           >
         {/if}
       </div>

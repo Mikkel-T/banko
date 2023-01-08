@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import FaMoon from "svelte-icons/fa/FaMoon.svelte";
-  import FaSun from "svelte-icons/fa/FaSun.svelte";
+  import Fa6SolidSun from "~icons/fa6-solid/sun";
+  import PhMoonFill from "~icons/ph/moon-fill";
 
   let theme = "";
   onMount(() => {
@@ -26,14 +26,11 @@
   <div
     class="absolute ml-0.5 h-5 w-5 rounded-full bg-dracula-light ring-dracula-red transition-all duration-300 group-hover:ring-4 dark:translate-x-6"
   />
-  <span
+  <Fa6SolidSun
     class="icon absolute h-4 w-4 translate-x-1 text-dracula-orange-300 transition-colors duration-300 dark:text-dracula-darker-800"
-  >
-    <FaSun />
-  </span>
-  <span
-    class="icon absolute ml-1 h-4 w-4 translate-x-6 text-dracula-darker-800 transition-colors duration-300 dark:text-dracula-orange-300"
-  >
-    <FaMoon />
-  </span>
+  />
+
+  <PhMoonFill
+    class="icon absolute h-5 w-5 translate-x-[1.65rem] text-dracula-darker-800 transition-colors duration-300 dark:text-dracula-orange-300"
+  />
 </button>
