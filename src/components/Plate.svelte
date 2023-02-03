@@ -10,7 +10,7 @@
 
   export let seed = get_seed();
 
-  let plate;
+  let plate: Plate;
 
   onMount(() => {
     plate = new Plate(seed);
@@ -51,7 +51,7 @@
                   class:bg-dracula-green-900={num.has_number &&
                     plate.check_rows().includes(rowIdx)}
                   on:click={() => {
-                    if (num.has_number) {
+                    if (num.has_number && num.number) {
                       plate.pick_num(num.number);
                       plate = plate;
                     }

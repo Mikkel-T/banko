@@ -3,14 +3,14 @@
 
   import { drawn } from "@store/drawn";
 
-  export let seed;
+  export let seed: number;
 
-  let plate;
+  let plate: Plate;
 
   $: plate = new Plate(seed);
   $: {
     plate.reset();
-    plate.pick_nums($drawn);
+    plate.pick_nums([...$drawn]);
     plate = plate;
   }
 </script>

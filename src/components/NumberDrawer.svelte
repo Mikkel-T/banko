@@ -6,7 +6,7 @@
 
   import { draw, drawn, reset } from "@store/drawn";
 
-  let seed;
+  let seed: number;
 </script>
 
 <div class="flex flex-col items-center justify-center gap-2 md:w-1/2">
