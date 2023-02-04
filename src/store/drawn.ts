@@ -9,6 +9,7 @@ export function draw() {
   );
 
   if (nums.length > 0) {
+    //@ts-expect-error The picked index will be available due to the length of nums being used to calculate it
     add(nums[Math.floor(Math.random() * nums.length)]);
   }
 }
