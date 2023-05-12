@@ -2,6 +2,7 @@
   import IcRoundRefresh from "~icons/ic/round-refresh";
   import IcRoundPlus from "~icons/ic/round-plus";
   import IcRoundMinus from "~icons/ic/round-minus";
+  import IcRoundPrint from "~icons/ic/round-print";
 
   import Footer from "@components/Footer.svelte";
   import Plate from "@components/Plate.svelte";
@@ -41,6 +42,13 @@
     >
       <IcRoundRefresh class="mr-2 inline-flex h-5 w-5" />
       Nulstil alle plader
+    </button>
+    <button
+      class="flex cursor-pointer items-center justify-center rounded-md bg-dracula-orange-400 p-2 text-dracula-light hover:bg-dracula-orange-500 active:bg-dracula-orange-600"
+      on:click={() => window.print()}
+    >
+      <IcRoundPrint class="mr-2 inline-flex h-5 w-5" />
+      Print bankoplader
     </button>
   </div>
 
