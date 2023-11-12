@@ -32,7 +32,7 @@
 
 {#if plate}
   <div
-    class="inline-block border-4 border-dracula-darker py-1 px-2 dark:border-dracula-light"
+    class="inline-block border-4 border-dracula-darker px-2 py-1 dark:border-dracula-light"
   >
     <table
       class="border-2 border-dracula-darker text-2xl dark:border-dracula-light"

@@ -1,10 +1,10 @@
 import { get_seed } from "@utils";
-import { prng_alea } from "esm-seedrandom";
+import seedrandom from "seedrandom";
 
 type PlateRows<T> = [
   [T, T, T, T, T, T, T, T, T],
   [T, T, T, T, T, T, T, T, T],
-  [T, T, T, T, T, T, T, T, T]
+  [T, T, T, T, T, T, T, T, T],
 ];
 
 export class Plate {
@@ -37,7 +37,7 @@ export class Plate {
       this.seed = seed;
     }
 
-    const rng = prng_alea(this.seed);
+    const rng = seedrandom(this.seed.toString());
 
     /**
      * The rows of the plate itself
@@ -74,7 +74,7 @@ export class Plate {
       const num = Math.floor(1 + rng() * 90);
       if (numbers.includes(num)) continue;
       const range = ranges.find((i) => i.includes(num));
-      // Add only if there is less than 3 numbers from the same range in the numbers array
+      // Add only if there are less than 3 numbers from the same range in the numbers array
       if (numbers.filter((i) => range?.includes(i)).length < 3) {
         numbers.push(num);
       }
@@ -86,7 +86,7 @@ export class Plate {
     const lengths: [
       len1: [index: number, numbers: [number]][],
       len2: [index: number, numbers: [number, number]][],
-      len3: [index: number, numbers: [number, number, number]][]
+      len3: [index: number, numbers: [number, number, number]][],
     ] = [[], [], []];
 
     ranges.forEach((range, i) => {
@@ -135,7 +135,7 @@ export class Plate {
   to_string(): string {
     let res = "┌──┬──┬──┬──┬──┬──┬──┬──┬──┐\n";
     const rows = this.to_string_rows().map((row) =>
-      row.map((i) => i.padStart(2, " "))
+      row.map((i) => i.padStart(2, " ")),
     );
 
     rows.forEach((r, i) => {
@@ -257,7 +257,7 @@ export class Plate {
  * Get the amount of already filled spaces on each row
  */
 function get_row_lens(
-  rows: PlateRows<number>
+  rows: PlateRows<number>,
 ): [index: number, used_spaces: number][] {
   const all_lens: [number, number][] = rows.map((row, i) => [
     i,
@@ -270,7 +270,7 @@ function get_row_lens(
 /**
  * Shuffles an array
  */
-function shuffle_array<T>(array: T[], rng): T[] {
+function shuffle_array<T>(array: T[], rng: seedrandom.PRNG): T[] {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1));
     const temp = array[i];
