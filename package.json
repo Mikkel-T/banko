@@ -13,29 +13,29 @@
     "format": "prettier . -w"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.141",
+    "@iconify/json": "^2.2.162",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/seedrandom": "^3.0.8",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "astro": "^3.5.3",
-    "eslint": "^8.53.0",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "astro": "^4.0.8",
+    "eslint": "^8.56.0",
     "eslint-plugin-svelte3": "^4.0.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.1",
-    "prettier-plugin-svelte": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.7",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2",
-    "unplugin-icons": "^0.17.3"
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.3",
+    "prettier-plugin-svelte": "^3.1.2",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3",
+    "unplugin-icons": "^0.18.1"
   },
   "dependencies": {
-    "@astrojs/svelte": "^4.0.3",
-    "@astrojs/tailwind": "^5.0.2",
-    "nanoevents": "^8.0.0",
+    "@astrojs/svelte": "^5.0.3",
+    "@astrojs/tailwind": "^5.1.0",
+    "nanoevents": "^9.0.0",
     "nanostores": "^0.9.5",
     "seedrandom": "^3.0.5",
-    "svelte": "^4.2.3",
+    "svelte": "^4.2.8",
     "tailwind-dracula": "^1.1.0"
   }
 }

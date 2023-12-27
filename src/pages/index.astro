@@ -1,13 +1,52 @@
 ---
-import NumberDrawer from "@components/NumberDrawer.svelte";
-import NumberTable from "@components/NumberTable.svelte";
+import Footer from "@components/Footer.svelte";
+import Plate from "@components/Plate.svelte";
 
 import BaseLayout from "layout:BaseLayout";
 ---
 
 <BaseLayout>
-  <div class="flex w-full flex-col-reverse md:flex-row">
-    <NumberTable client:visible />
-    <NumberDrawer client:visible />
+  <div class="my-3 text-center text-4xl font-bold">Banko</div>
+  <div class="mx-auto w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3">
+    <p>
+      På denne hjemmeside kan du både spille og holde styr på bankospil. Der er
+      to hovedsider: Bankoplade og Opråber.
+    </p>
+    <p>
+      Bankoplade-siden giver dig mulighed for enten at bruge interaktive
+      bankoplader online online eller printe dem ud. Pladerne bliver genereret
+      ud fra et ID-nummer, og plader med det samme ID-nummer vil altid være de
+      samme.
+    </p>
+    <p>
+      Opråber-siden giver dig en tabel med alle tallene fra 1 til 90 og mulighed
+      for at trække tal som vil blive vist og udfyldt på tabellen. Plader kan
+      også tjekkes ud fra deres ID-nummer for nemt at se, om der er banko på en
+      plade.
+    </p>
+    <p>
+      Hjemmesiden er tilgængelig i både lyst og mørkt tema, dette skiftes via
+      knappen øverst i højre hjørne.
+    </p>
+    <p>
+      Nedenfor finder du links til de forskellige sider. Hvis du blot har brug
+      for en bankoplade, kan du bruge den interaktive plade under de to links.
+    </p>
+    <div
+      class="my-5 flex flex-col items-center justify-around gap-5 text-xl font-bold sm:flex-row"
+    >
+      <a
+        class="flex size-40 items-center justify-center rounded-md border-2 border-dracula-light-200 bg-dracula-light-100 hover:bg-dracula-light-200 dark:border-dracula-darker-300 dark:bg-dracula-darker-400 dark:hover:bg-dracula-darker-300"
+        href="/plader">Bankoplader</a
+      >
+      <a
+        class="flex size-40 items-center justify-center rounded-md border-2 border-dracula-light-200 bg-dracula-light-100 hover:bg-dracula-light-200 dark:border-dracula-darker-300 dark:bg-dracula-darker-400 dark:hover:bg-dracula-darker-300"
+        href="/opraaber">Opråber</a
+      >
+    </div>
   </div>
+  <div class="mx-auto my-3 w-fit px-1">
+    <Plate client:idle />
+  </div>
+  <Footer />
 </BaseLayout>

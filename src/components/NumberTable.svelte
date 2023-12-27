@@ -3,7 +3,7 @@
 </script>
 
 <table
-  class="h-screen select-none border border-dracula-darker p-0 text-center dark:border-dracula-light md:w-1/2"
+  class="h-screen select-none border border-dracula-darker p-0 text-center md:w-1/2 dark:border-dracula-light"
 >
   <tbody>
     {#each [...Array(9).keys()].map((i) => (i + 1) * 10) as row}

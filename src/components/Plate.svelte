@@ -41,11 +41,11 @@
         <tr class:bg-dracula-green-700={plate.check_rows().includes(rowIdx)}>
           {#each row as num}
             <td
-              class="h-16 w-16 border border-dracula-darker p-0 text-center font-bold dark:border-dracula-light"
+              class="size-16 border border-dracula-darker p-0 text-center font-bold dark:border-dracula-light"
             >
               {#if num.has_number}
                 <button
-                  class="flex h-full w-full items-center justify-center rounded-full border-dracula-orange bg-opacity-80 outline-none hover:border-4"
+                  class="flex h-full w-full items-center justify-center rounded-full bg-opacity-80 outline-none ring-inset ring-dracula-orange hover:ring-4"
                   class:bg-dracula-red={num.picked &&
                     !plate.check_rows().includes(rowIdx)}
                   class:bg-dracula-green-900={num.has_number &&
@@ -93,6 +93,29 @@
           >
         {/if}
       </div>
+      <div>banko.mikkel-t.com</div>
+    </div>
+  </div>
+{:else}
+  <div
+    class="inline-block border-4 border-dracula-darker px-2 py-1 dark:border-dracula-light"
+  >
+    <table
+      class="border-2 border-dracula-darker text-2xl dark:border-dracula-light"
+    >
+      {#each Array(3) as _}
+        <tr>
+          {#each Array(9) as _}
+            <td
+              class="size-16 border border-dracula-darker p-0 dark:border-dracula-light"
+            >
+            </td>
+          {/each}
+        </tr>
+      {/each}
+    </table>
+    <div class="flex flex-row items-end justify-between">
+      <div></div>
       <div>banko.mikkel-t.com</div>
     </div>
   </div>
